@@ -1,0 +1,691 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Muhammed Dilshad</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" href="OIP.jpeg" type="image/jpeg">
+  <style>
+   /* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #161b22; /* Dark background */
+  color: #c9d1d9; /* Light text color */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+a {
+  text-decoration: none;
+  color: #58a6ff; /* Bright blue for links */
+}
+
+a:hover {
+  color: #79c0ff; /* Lighter blue on hover */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #161b22; /* Darker navbar */
+  color: #c9d1d9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  opacity: 0;
+  animation: fadeIn 1s forwards 0.2s;
+}
+
+.navbar h1 {
+  font-size: 24px;
+  color: #58a6ff; /* Accent color */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a:hover {
+  color: #79c0ff;
+}
+
+/* Fade-in and direction-based animations for sections */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromUp {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromDown {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #161b22; /* Dark header background */
+  height: 100vh;
+  text-align: center;
+  flex-wrap: wrap;
+  animation: slideFromUp 1s forwards;
+}
+
+.header-content {
+  max-width: 700px;
+  text-align: justify;
+  margin-left: 20px;
+  transition: transform 0.3s ease;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  padding: 20px;
+  line-height: 1.8;
+  font-size: 16px;
+  background: #21262d; /* Slightly lighter dark background */
+  color: #8b949e;
+  opacity: 0;
+  animation: slideFromLeft 1s forwards 0.5s;
+}
+
+.header-content:hover {
+  transform: scale(1.05);
+}
+
+/* About Image */
+.photo-placeholder {
+  width: 300px;
+  height: 480px; /* Square shape */
+  background: #333;
+ 
+  overflow: hidden;
+  flex-shrink: 0;
+  
+}
+
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.photo-placeholder img:active {
+  transform: scale(1.5);
+}
+
+/* Resume Button */
+.resume-btn {
+  margin-top: 10px;
+  padding: 10px 10px;
+  background: #58a6ff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  opacity: 0;
+  animation: slideFromUp 1s forwards 1s;
+}
+
+.resume-btn:hover {
+  background: #30363d;
+}
+
+/* Key Skills Section */
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  background: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  animation: slideFromLeft 1s forwards 1.5s;
+}
+
+.skills-section h2 {
+  margin-bottom: 30px;
+  font-size: 25px;
+  color: #58a6ff;
+}
+
+.skills-list {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.skill {
+  margin-bottom: 20px;
+}
+
+.skill span {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+  color: #79c0ff;
+}
+
+.progress-bar {
+  width: 100%;
+  background: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 25px;
+}
+
+.progress {
+  height: 100%;
+  background: #58a6ff;
+  color: #fff;
+  font-size: 0.9em;
+  text-align: right;
+  padding-right: 10px;
+  line-height: 25px;
+  border-radius: 10px;
+}
+
+/* Projects Section */
+.projects {
+  padding: 50px 40px;
+  text-align: center;
+  background: #161b22;
+  animation: slideFromDown 1s forwards 2s;
+}
+
+.project-card {
+  background: #21262d;
+  border: 1px solid #30363d;
+  padding: 20px;
+  border-radius: 5px;
+  width: 250px; /* Square shape */
+  height: 250px; /* Square shape */
+  text-align: center;
+  transition: border-color 0.3s ease;
+  display: inline-block;
+  margin: 20px;
+}
+
+.project-card:hover {
+  border-color: #79c0ff;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h3 {
+  margin: 10px 0;
+  color: #79c0ff;
+}
+
+.btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  background: #58a6ff;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #30363d;
+}
+
+/* Experience Section */
+.experience {
+  padding: 50px 20px;
+  border: 1px solid #30363d;
+  border-radius: 5px;
+  text-align: center;
+  background: #21262d;
+  animation: slideFromUp 1s forwards 2.5s;
+}
+
+.experience h2 {
+  margin-bottom: 20px;
+  color: #58a6ff;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.experience-item {
+  background: #161b22;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  max-width: 600px;
+  width: 100%;
+  border: 1px solid #30363d;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.experience-item:hover {
+  background: #58a6ff;
+  color: #fff;
+  transform: translateY(-10px);
+}
+
+.experience-item h3 {
+  margin: 0;
+  color: #79c0ff;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.experience-item p {
+  color: #8b949e;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+.experience-item .job-date {
+  font-size: 14px;
+  color: #aaa;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+/* Certificates Section */
+
+.contact-section {
+    text-align: center;
+    background-color:#161b22; /* Dark background */
+    color: #fff; /* White text color */
+    padding: 40px;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 80%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #fff; /* Bottom border */
+    background-color: transparent;
+    color: #fff;
+}
+
+.contact-section textarea {
+    resize: vertical; /* Allow vertical resizing only */
+    height: 150px;
+}
+
+.contact-section button {
+    padding: 15px 30px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #0056b3;
+}
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-form-image {
+        width: 100%;
+    }
+
+    .contact-form-fields {
+        width: 100%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        flex-direction: column;
+    }
+
+    .contact-form-image {
+        width: 100%;
+    }
+
+    .contact-form-fields {
+        width: 100%;
+    }
+}
+
+/* Social Media Section Styles */
+.social-media-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icon {
+  margin: 0 10px;
+  color: #fff;
+  font-size: 24px; /* Adjust font size for better visibility */
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #79c0ff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .photo-placeholder {
+    width: 200px;
+    height: 200px;
+  }
+
+  .header-content {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+
+  .project-card,
+  .experience-item,
+  .certificate-card {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar h1 {
+    font-size: 20px;
+  }
+
+  .photo-placeholder {
+    width: 150px;
+    height: 150px;
+  }
+
+  .header h2 {
+    font-size: 24px;
+  }
+
+  .skills-list {
+    flex-direction: column;
+  }
+}
+
+
+</style>
+<!-- Style for Social Media Section -->
+<style>
+  .social-media-section {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    padding: 20px;
+    background-color:#30363d ;
+  }
+
+  .social-icon {
+    font-size: 30px;
+    color: #0077b5; /* LinkedIn color */
+    margin: 0 15px;
+    transition: color 0.3s ease;
+  }
+
+  .social-icon:hover {
+    color: #58a6ff; /* Hover color */
+  }
+
+  .social-icon i {
+    transition: transform 0.3s ease;
+  }
+
+  .social-icon:hover i {
+    transform: scale(1.1);
+  }
+
+
+ 
+</style> </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1 class="navbar-logo">Dilshad</h1>
+
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="header">
+    <div class="photo-placeholder">
+      <img src="myphoto.jpg" alt="Muhammed Dilshad">
+    </div>
+    <div class="header-content">
+      <h2>Hello, I am <span>Muhammed Dilshad</span></h2>
+      <p>
+        
+        I am  dedicated  Data Analyst  with a solid academic foundation in Computer Science specializing in Statistics and Mathematics from MES Kalladi College, University of Calicut. My expertise lies in transforming complex datasets into actionable insights through skills in Python SQL Power BI Tableau and Excel. As a Data Science Intern at Bridgeon Solutions, I have contributed to impactful projects, including a hospital patient comparison analysis, HR data analysis, and a music trends dashboard, where I analyzed Spotify data to uncover insights into song popularity, artist performance, and user engagement. I excel in data manipulation, statistical analysis, and visualization, creating solutions that empower organizations to make data-driven decisions and optimize performance. Passionate about leveraging data to solve real-world problems, I continuously strive to enhance my skills and deliver meaningful insights that drive success. 
+        
+        
+        
+        </p>
+        <a href="MUHAMMED DILSHAD DATA ANALYST (1).pdf" class="resume-btn" download="MUHAMMED_DILSHAD_RESUME.pdf">Download Resume</a>
+
+    </div>
+  </section>
+
+  <!-- Key Skills Section -->
+<!-- Key Skills Section -->
+<section id="skills" class="skills-section">
+  <h2>Key Skills</h2>
+  <div class="skills-list">
+    <div class="skill">
+      <span>Python</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 90%;">90%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>SQL</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 85%;">85%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>Power BI</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 80%;">80%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>Excel</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 75%;">75%</div>
+      </div>
+    </div>
+    <div class="skill">
+      <span>Tableau</span>
+      <div class="progress-bar">
+        <div class="progress" style="width: 70%;">70%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <img src="project1.png" alt="Song Trends Analysis">
+      <h3>Song Trends Analysis</h3>
+      <p></p>
+      <a href="https://project.novypro.com/aLhmZU" class="btn">See More</a>
+    </div>
+    <div class="project-card">
+      <img src="project 2.png" alt="Sales Dashboard">
+      <h3>Hospital Patient Analysis</h3>
+      <p></p>
+      <a href="https://app.powerbi.com/view?r=eyJrIjoiNDNlZDA0ZWQtMzMxZi00ZmJhLWJkMDktNzBjMTJmYjdhYjkxIiwidCI6IjE1NWM4ZGNmLWE0NzgtNGQ1Zi04MTNkLTBjMTUzMTUzOWE2NCJ9" class="btn">See More</a>
+    </div>
+    <div class="project-card">
+      <img src="project3.png" alt="Song Trends Analysis">
+      <h3>HR Analytical Dashboard</h3>
+      <p></p>
+      <a href="" class="btn">See More</a>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <!-- Experience Section -->
+<section id="experience" class="experience">
+  <h2>Experience</h2>
+  <div class="experience-item">
+    <h3>Data Analyst</h3>
+    <p>
+
+      "I am a Data Analyst with one year of experience at Bridgeon Solutions. During this time, I have honed my skills in data manipulation, statistical analysis, and data visualization. I have worked on several projects involving the analysis of large datasets to identify trends, make data-driven decisions, and support business objectives. I am proficient in tools like Python, SQL, Power BI, Tableau, and Excel, which I use to extract insights, create reports, and build interactive dashboards. My experience has given me the ability to turn complex data into actionable insights, contributing to the success of various projects."</p>
+    <div class="job-date">Jan 2024 - Present</div>
+  </div>
+</section>
+
+
+
+  <!-- Certificates Section -->
+  
+  <section class="contact-section" id="contact">
+    <h2 style="color:#58a6ff;">Contact Us</h2>
+    <div> 
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Required Access Key -->
+        <input type="hidden" name="access_key" value="af6aa46f-b5e9-4068-9ff1-a5317e714e84">
+        
+        <!-- First Name Field -->
+        <input type="text" name="first_name" placeholder="First Name" required>
+        
+        <!-- Phone Number Field -->
+        <input type="tel" name="phone_number" placeholder="Phone Number" required>
+        
+        <!-- Email Field -->
+        <input type="email" name="email" placeholder="Your Email" required>
+        
+        <!-- Message Field -->
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        
+        <!-- Submit Button -->
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
+  
+  <section id="social-media" class="social-media-section">
+    <a href="https://www.linkedin.com/in/dilshad-kalathil" target="_blank" class="social-icon">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/dilshadkalathil" target="_blank" class="social-icon">
+      <i class="fab fa-github"></i>
+    </a>
+  </section>
+ 
+<!-- Footer -->
+<footer style="background-color: #161b22; text-align: center; padding: 10px; color: #c9d1d9;">
+  <p>&copy; 2024 Muhammed Dilshad. All Rights Reserved.</p>
+</footer>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</body>
+</html>
